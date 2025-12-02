@@ -205,9 +205,6 @@ realestatepricepredictor/
 │
 ├── .gitignore
 ├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── CHANGELOG.md
 └── .env.example
 ```
 
