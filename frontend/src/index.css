@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+/* DIRECT FIX (no @apply) */
+@layer base {
+  body {
+    background-color: #0a0e18;    /* bg-bg-dark-primary */
+    color: #FFFFFF;               /* text-text-light     */
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+  }
+
+  input,
+  textarea,
+  select {
+    color: #2d3748; /* tailwind gray-800 */
+  }
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #b1c8e9;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #10448b;
+}
+
+/* Animated blurred shapes for MapPage */
+@layer utilities {
+  @keyframes shape1 {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(40px) scale(1.08); }
+  }
+  @keyframes shape2 {
+    0%, 100% { transform: translateX(0) scale(1); }
+    50% { transform: translateX(-50px) scale(1.12); }
+  }
+  @keyframes shape3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -30px) scale(1.06); }
+  }
+  .animate-shape1 {
+    animation: shape1 10s ease-in-out infinite;
+  }
+  .animate-shape2 {
+    animation: shape2 14s ease-in-out infinite;
+  }
+  .animate-shape3 {
+    animation: shape3 12s ease-in-out infinite;
+  }
+}
